@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet/less" type="text/css" href="style.less" />
+    <script src="https://unpkg.com/feather-icons"></script>
     <title>REST Countries</title>
   </head>
   <body>
     <header>
       <h1>Where in the World?</h1>
-      <button>Dark Mode</button>
+      <button class="theme">
+        <i data-feather="moon" width="18px"></i>
+        <p>Dark Mode</p>
+      </button>
     </header>
     <main>
       <div>
@@ -39,5 +43,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
     <script type="module" src="main.js"></script>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
