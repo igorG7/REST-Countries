@@ -16,16 +16,30 @@
       </button>
     </header>
     <main>
-      <div>
-        <input type="text" />
+      <div class="filter">
+        <div class="search-group">
+          <i class="icon" data-feather="search" width="20px" height="20px"></i>
+          <input
+            type="text"
+            class="search"
+            placeholder="Search for a country..."
+          />
+        </div>
 
-        <select name="" id="">
-          <option value="">Africa</option>
-          <option value="">America</option>
-          <option value="">Asia</option>
-          <option value="">Europe</option>
-          <option value="">Oceania</option>
-        </select>
+        <div class="select">
+          <p>Filter by Region</p>
+          <i data-feather="chevron-down" width="18px" height="18px"></i>
+        </div>
+
+        <div class="select-items">
+          <ul>
+            <li>Africa</li>
+            <li>America</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
+          </ul>
+        </div>
       </div>
 
       <div>
