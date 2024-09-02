@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet/less" type="text/css" href="details.less" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>REST Countries</title>
+  </head>
+  <body>
+    <header>
+      <h1>Where in the World?</h1>
+      <button class="theme">
+        <i data-feather="moon" width="18px"></i>
+        <p>Dark Mode</p>
+      </button>
+    </header>
+
+    <main>
+      <div class="back">
+        <button class="back-button">
+          <i data-feather="arrow-left" width="18px" height="18px"></i>
+          <span>Back</span>
+        </button>
+      </div>
+
+      <div class="country-details">
+        <div class="flag"></div>
+
+        <div class="infos">
+          <h2 class="country-name">Belgium</h2>
+
+          <div class="group-infos">
+            <div class="region-infos">
+              <p><strong>Native Name:</strong></p>
+              <p><strong>Population:</strong></p>
+              <p><strong>Region:</strong></p>
+              <p><strong>Sub Region:</strong></p>
+              <p><strong>Capital:</strong></p>
+            </div>
+
+            <div class="lang-infos">
+              <p><strong>Top Level Domain:</strong></p>
+              <p><strong>Currencies:</strong></p>
+              <p><strong>Languages:</strong></p>
+            </div>
+          </div>
+
+          <div class="border">
+            <h2 class="">Border Countries:</h2>
+
+            <div class="border-countries">
+              <div class="countries-front"><p>France</p></div>
+              <div class="countries-front"><p>France</p></div>
+              <div class="countries-front"><p>Netherlands</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

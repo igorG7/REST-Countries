@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>REST Countries</title>
+  </head>
+  <body>
+    <header>
+      <h1>Where in the World?</h1>
+      <button class="theme">
+        <i data-feather="moon" width="18px"></i>
+        <p>Dark Mode</p>
+      </button>
+    </header>
+    <main>
+      <div class="filter">
+        <div class="search-group">
+          <div class="icon">
+            <i data-feather="search" width="20px" height="20px"></i>
+          </div>
+          <input
+            type="search"
+            class="search"
+            placeholder="Search for a country..."
+          />
+        </div>
+
+        <div class="filter-select">
+          <div class="select">
+            <p>Filter by Region</p>
+            <i data-feather="chevron-down" width="18px" height="18px"></i>
+          </div>
+
+          <div class="select-items">
+            <ul>
+              <li>Africa</li>
+              <li>America</li>
+              <li>Asia</li>
+              <li>Europe</li>
+              <li>Oceania</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="countries">
+        <div class="country" onclick="window.location.href='page/details.html'">
+          <div class="flag">
+            <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
+          </div>
+          <div class="country-infos">
+            <h2>Germany</h2>
+            <p><strong>Population:</strong> 81,770,900</p>
+            <p><strong>Region:</strong> Europe</p>
+            <p><strong>Capital:</strong> Berlin</p>
+          </div>
+        </div>
+        <div class="country">
+          <div class="flag">
+            <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
+          </div>
+          <div class="country-infos">
+            <h2>Germany</h2>
+            <p><strong>Population:</strong> 81,770,900</p>
+            <p><strong>Region:</strong> Europe</p>
+            <p><strong>Capital:</strong> Berlin</p>
+          </div>
+        </div>
+
+        <div class="country">
+          <div class="flag">
+            <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
+          </div>
+          <div class="country-infos">
+            <h2>Germany</h2>
+            <p><strong>Population:</strong> 81,770,900</p>
+            <p><strong>Region:</strong> Europe</p>
+            <p><strong>Capital:</strong> Berlin</p>
+          </div>
+        </div>
+        <div class="country">
+          <div class="flag">
+            <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
+          </div>
+          <div class="country-infos">
+            <h2>Germany</h2>
+            <p><strong>Population:</strong> 81,770,900</p>
+            <p><strong>Region:</strong> Europe</p>
+            <p><strong>Capital:</strong> Berlin</p>
+          </div>
+        </div>
+
+        <div class="country">
+          <div class="flag">
+            <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
+          </div>
+          <div class="country-infos">
+            <h2>Germany</h2>
+            <p><strong>Population:</strong> 81,770,900</p>
+            <p><strong>Region:</strong> Europe</p>
+            <p><strong>Capital:</strong> Berlin</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script type="module" src="main.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

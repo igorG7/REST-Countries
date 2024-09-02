@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Colors
+
+@DarkBlue: hsl(209, 23%, 22%); //Dark mode elements
+@VeryDarkBlue: hsl(207, 26%, 17%); //Dark mode background
+@VeryDarkBlue: hsl(200, 15%, 8%); //Light mode Text
+@DarkGray: hsl(0, 0%, 52%); // Light mode input
+@VeryLightGray: hsl(0, 0%, 98%); // Light mode background
+@White: hsl(0, 0%, 100%); // Dark mode Text & Light mode elements
+
+body {
+  background-color: @VeryLightGray;
+  font-family: Nunito Sans;
+
+  header {
+    width: 100%;
+    height: 70px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: @White;
+    box-shadow: 0px 10px 8px -4px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .theme {
+      border: none;
+      background-color: transparent;
+      font-family: Nunito Sans;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      p {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  main {
+    width: 100%;
+
+    .filter {
+      width: 90%;
+      margin: 32px auto;
+
+      .search-group {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        height: 50px;
+        border-radius: 8px;
+        background-color: @White;
+        box-shadow: 0px 0px 33px 7px rgba(0, 0, 0, 0.1);
+
+        .icon {
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .search {
+          width: 80%;
+          height: 100%;
+          border: none;
+          padding: 0 16px;
+          background-color: transparent;
+          font-family: Nunito Sans;
+          font-weight: 300;
+          font-size: 14px;
+          outline: none;
+
+          &::placeholder {
+            color: @DarkGray;
+          }
+        }
+      }
+
+      .filter-select {
+        width: 60%;
+        position: relative;
+
+        .select {
+          width: 100%;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 32px;
+          padding: 16px;
+          background-color: @White;
+          border: none;
+          border-radius: 8px;
+          box-shadow: 0px 0px 33px 7px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+
+          p {
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+
+        .select-items {
+          width: 100%;
+          position: absolute;
+
+          ul {
+            margin-top: 4px;
+            padding: 16px;
+            list-style: none;
+            background-color: @White;
+            border-radius: 8px;
+            background-color: @White;
+            box-shadow: 0px 0px 33px 7px rgba(0, 0, 0, 0.1);
+
+            li {
+              margin: 4px 0;
+              width: fit-content;
+              font-size: 14px;
+              font-weight: 600;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .countries {
+      width: 70%;
+      margin: auto;
+
+      .country {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 32px;
+        background-color: @White;
+        border-radius: 8px;
+        box-shadow: 0px 0px 33px 7px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        .flag {
+          width: 100%;
+          height: 180px;
+
+          img {
+            border-radius: 8px 8px 0 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .country-infos {
+          padding: 16px 32px;
+
+          h2 {
+            font-size: 20px;
+            margin-bottom: 16px;
+          }
+
+          p {
+            margin: 4px 0;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    header {
+      padding: 16px 64px;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .theme {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    main {
+      .filter {
+        width: 90%;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+
+        .search-group {
+          width: 40%;
+          max-width: 480px;
+          margin-top: 0;
+
+          .search {
+            font-size: 16px;
+          }
+        }
+
+        .filter-select {
+          width: 15%;
+          max-width: 260px;
+          min-width: 160px;
+
+          .select {
+            width: 100%;
+            margin-top: 0;
+          }
+
+          .select-items {
+            width: 100%;
+          }
+        }
+      }
+
+      .countries {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .country {
+          flex: 0 0 25%;
+          max-width: 250px;
+          height: 320px;
+          margin: 0 0 64px 0;
+
+          &:nth-child(4n-2) {
+            margin-right: 1px;
+          }
+
+          .flag {
+            width: 100%;
+            height: 150px;
+          }
+        }
+      }
+    }
+  }
+}
