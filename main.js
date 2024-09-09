@@ -46,9 +46,8 @@ function eventInputSearch(event) {
   if (!data) return;
 
   countriesList.innerHTML = "";
-  let countries = data;
   let valueSearch = event.target.value;
-  let filtredCountries = countries.filter(
+  let filtredCountries = data.filter(
     (item) => item.name.toLowerCase().indexOf(valueSearch.toLowerCase()) > -1
   );
 
@@ -64,4 +63,22 @@ function debounce(func, delay) {
       func.apply(this, args);
     }, delay);
   };
+}
+
+const regionOptions = Array.from(document.querySelectorAll(".region-option"));
+
+regionOptions.forEach((option) => {
+  option.addEventListener("click", filterByRegion);
+});
+
+function filterByRegion(event) {
+  let itemAttribute = event.target.getAttribute("data-region");
+
+  if (!data) return;
+
+  let filtredRegion = data.filter(
+    (item) => item.region.toLowerCase() === itemAttribute.toLowerCase()
+  );
+
+  createCards(filtredRegion);
 }
