@@ -37,7 +37,7 @@ function createCards(data) {
 
   countriesList.innerHTML = cardsHTML;
 
-  addClickEventCards();
+  clickAndRedirect();
 }
 
 function clickAndRedirect() {
