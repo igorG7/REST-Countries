@@ -26,7 +26,7 @@ function createCards(data) {
       </div>
 
       <div class="country-infos">
-        <h2>${card.name}</h2>
+        <h2 class="name-country">${card.name}</h2>
         <p><strong>Population:</strong> ${card.population.toLocaleString()}</p>
         <p><strong>Region:</strong> ${card.region}</p>
         <p><strong>Capital:</strong> ${card.capital}</p>
@@ -36,6 +36,24 @@ function createCards(data) {
   });
 
   countriesList.innerHTML = cardsHTML;
+
+  addClickEventCards();
+}
+
+function clickAndRedirect() {
+  const countriesCards = document.querySelectorAll(".country");
+
+  countriesCards.forEach((element) => {
+    element.addEventListener("click", function (event) {
+      // window.location.href = "page/details.html";
+      let selectedCountryName =
+        event.currentTarget.querySelector("h2").textContent;
+      let countryObject = data.find(
+        (item) => item.name === selectedCountryName
+      );
+      console.log(selectedCountryName, countryObject);
+    });
+  });
 }
 
 const input = document.querySelector("#search");
