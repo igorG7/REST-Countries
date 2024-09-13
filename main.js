@@ -37,23 +37,33 @@ function createCards(data) {
 
   countriesList.innerHTML = cardsHTML;
 
-  clickAndRedirect();
+  redirectDetails();
+  getCountryObject();
 }
 
-function clickAndRedirect() {
+function redirectDetails() {
   const countriesCards = document.querySelectorAll(".country");
 
   countriesCards.forEach((element) => {
-    element.addEventListener("click", function (event) {
-      // window.location.href = "page/details.html";
-      let selectedCountryName =
-        event.currentTarget.querySelector("h2").textContent;
-      let countryObject = data.find(
-        (item) => item.name === selectedCountryName
-      );
-      console.log(selectedCountryName, countryObject);
+    element.addEventListener("click", function () {
+      window.location.href = "page/details.html";
     });
   });
+}
+
+function getCountryObject() {
+  const countriesCards = document.querySelectorAll(".country");
+
+  countriesCards.forEach((element) => {
+    element.addEventListener("click", storeCountryObject);
+  });
+}
+
+function storeCountryObject(event) {
+  let selectedCountryName = event.currentTarget.querySelector("h2").textContent;
+  let foundCountry = data.find((item) => item.name === selectedCountryName);
+  sessionStorage.setItem("countryInfos", JSON.stringify(foundCountry));
+  console.log(selectedCountryName, foundCountry);
 }
 
 const input = document.querySelector("#search");
