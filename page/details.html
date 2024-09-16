@@ -25,24 +25,56 @@
       </div>
 
       <div class="country-details">
-        <div class="flag"></div>
+        <div class="flag">
+          <img id="country-flag" alt="Country flag" />
+        </div>
 
         <div class="infos">
-          <h2 class="country-name">Belgium</h2>
+          <h2 class="country-name"></h2>
 
           <div class="group-infos">
             <div class="region-infos">
-              <p><strong>Native Name:</strong></p>
-              <p><strong>Population:</strong></p>
-              <p><strong>Region:</strong></p>
-              <p><strong>Sub Region:</strong></p>
-              <p><strong>Capital:</strong></p>
+              <div class="group-region-infos">
+                <p class="region-topic">Native Name:</p>
+                <p id="native-name"></p>
+              </div>
+
+              <div class="group-region-infos">
+                <p class="region-topic">Population:</p>
+                <p id="population"></p>
+              </div>
+
+              <div class="group-region-infos">
+                <p class="region-topic">Region:</p>
+                <p id="region"></p>
+              </div>
+
+              <div class="group-region-infos">
+                <p class="region-topic">Sub Region:</p>
+                <p id="sub-region"></p>
+              </div>
+
+              <div class="group-region-infos">
+                <p class="region-topic">Capital:</p>
+                <p id="capital"></p>
+              </div>
             </div>
 
-            <div class="lang-infos">
-              <p><strong>Top Level Domain:</strong></p>
-              <p><strong>Currencies:</strong></p>
-              <p><strong>Languages:</strong></p>
+            <div class="economy-lang">
+              <div class="group-eco-lang-infos">
+                <p class="eco-lang-topic">Top Level Domain:</p>
+                <p id="top-lvl-domain"></p>
+              </div>
+
+              <div class="group-eco-lang-infos">
+                <p class="eco-lang-topic">Currencies:</p>
+                <p id="currencies"></p>
+              </div>
+
+              <div class="group-eco-lang-infos">
+                <p class="eco-lang-topic">Languages:</p>
+                <p id="languages"></p>
+              </div>
             </div>
           </div>
 
@@ -63,5 +95,6 @@
     <script>
       feather.replace();
     </script>
+    <script type="module" src="details.js"></script>
   </body>
 </html>
