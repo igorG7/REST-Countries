@@ -3,9 +3,11 @@ let data;
 
 async function requestData() {
   try {
-    const response = await fetch("data/data.json");
+    const response = await fetch(
+      "https://api-rest-countries-tau.vercel.app/countries"
+    );
     data = await response.json();
-    //   console.log(data);
+    console.log(data);
     createCards(data);
     return data;
   } catch {
