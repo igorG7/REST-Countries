@@ -34,3 +34,40 @@ let languagesObj = recoveredCountry.languages;
 languagesObj.forEach((item) => {
   languages.textContent += `${item.name},  ` ?? "- -";
 });
+
+let bordersCode = recoveredCountry.borders ?? [];
+
+async function requestApi(param) {
+  try {
+    const response = await fetch(
+      `https://api-rest-countries-tau.vercel.app/countries?alpha3Code=${param}`
+    );
+    const responseCountry = await response.json();
+    return responseCountry[0].name;
+  } catch {
+    console.log("Not find");
+  }
+}
+
+async function getNameBorderCountries() {
+  let nameBordersCountries = await Promise.all(
+    bordersCode.map(async (item) => {
+      return await requestApi(item);
+    })
+  );
+
+  return nameBordersCountries;
+}
+
+async function renderCards() {
+  const borderCountriesList = document.querySelector("#border-list");
+  const arrayNameCountries = await getNameBorderCountries();
+
+  arrayNameCountries.map((item) => {
+    borderCountriesList.innerHTML += `
+    <div class="countries-front"><p>${item}</p></div>
+  `;
+  });
+}
+
+renderCards();
