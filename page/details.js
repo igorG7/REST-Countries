@@ -1,7 +1,5 @@
 let recoveredCountry = JSON.parse(sessionStorage.getItem("countryInfos"));
 
-console.log(recoveredCountry);
-
 const flag = document.querySelector("#country-flag");
 flag.setAttribute("src", `${recoveredCountry.flags.svg}`);
 
@@ -61,6 +59,7 @@ async function getNameBorderCountries() {
 
 async function renderCards() {
   const borderCountriesList = document.querySelector("#border-list");
+
   const arrayNameCountries = await getNameBorderCountries();
 
   arrayNameCountries.map((item) => {
@@ -68,6 +67,36 @@ async function renderCards() {
     <div class="countries-front"><p>${item}</p></div>
   `;
   });
+
+  reloadNewCountry();
 }
 
 renderCards();
+
+function reloadNewCountry() {
+  const borderCards = document.querySelectorAll(".countries-front");
+
+  borderCards.forEach((item) => {
+    item.addEventListener("click", async (e) => {
+      let clickedCountry = e.currentTarget.querySelector("p").textContent;
+
+      let newCountry = await resquestNameCountryClicked(clickedCountry);
+
+      sessionStorage.setItem("countryInfos", JSON.stringify(newCountry));
+      location.reload();
+    });
+  });
+}
+
+async function resquestNameCountryClicked(params) {
+  try {
+    const response = await fetch(
+      `https://api-rest-countries-tau.vercel.app/countries?name=${params}`
+    );
+
+    const responseCountry = await response.json();
+    return responseCountry[0];
+  } catch {
+    console.log("Not find");
+  }
+}
