@@ -24,6 +24,7 @@
           <input
             type="search"
             class="search"
+            id="search"
             placeholder="Search for a country..."
           />
         </div>
@@ -36,18 +37,18 @@
 
           <div class="select-items">
             <ul>
-              <li>Africa</li>
-              <li>America</li>
-              <li>Asia</li>
-              <li>Europe</li>
-              <li>Oceania</li>
+              <li class="region-option" data-region="Africa">Africa</li>
+              <li class="region-option" data-region="Americas">Americas</li>
+              <li class="region-option" data-region="Asia">Asia</li>
+              <li class="region-option" data-region="Europe">Europe</li>
+              <li class="region-option" data-region="Oceania">Oceania</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="countries">
-        <div class="country" onclick="window.location.href='page/details.html'">
+      <div class="countries" id="countries-list">
+        <!-- <div class="country" onclick="window.location.href='page/details.html'">
           <div class="flag">
             <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
           </div>
@@ -58,6 +59,7 @@
             <p><strong>Capital:</strong> Berlin</p>
           </div>
         </div>
+
         <div class="country">
           <div class="flag">
             <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
@@ -81,6 +83,7 @@
             <p><strong>Capital:</strong> Berlin</p>
           </div>
         </div>
+
         <div class="country">
           <div class="flag">
             <img src="https://flagcdn.com/af.svg" alt="Country Flag" />
@@ -103,7 +106,7 @@
             <p><strong>Region:</strong> Europe</p>
             <p><strong>Capital:</strong> Berlin</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
 
