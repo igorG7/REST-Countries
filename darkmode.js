@@ -1,4 +1,4 @@
-let darkTheme = localStorage.getItem("darkMode");
+let darkTheme = localStorage.getItem("darkMode") ?? "disabled";
 
 export default function changeTheme() {
   darkTheme = darkTheme === "disabled" ? "enabled" : "disabled";
