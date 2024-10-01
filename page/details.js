@@ -1,3 +1,6 @@
+import changeTheme from "../darkmode.js";
+import { loadTheme } from "../darkmode.js";
+
 let recoveredCountry = JSON.parse(sessionStorage.getItem("countryInfos"));
 
 const flag = document.querySelector("#country-flag");
@@ -106,3 +109,9 @@ const backButton = document.querySelector("#back-button");
 backButton.addEventListener("click", () => {
   window.location.href = "../index.html";
 });
+
+const themeButton = document.querySelector("#theme-button");
+
+themeButton.addEventListener("click", changeTheme);
+
+loadTheme();

@@ -1,6 +1,9 @@
 @import "../style.less";
 
 body {
+  background-color: @BodyBackground;
+  color: @TextColor;
+
   main {
     .back {
       width: 80%;
@@ -16,9 +19,10 @@ body {
         padding: 0 32px;
         border: none;
         border-radius: 8px;
-        background-color: @White;
+        background-color: @BackgroundElements;
         box-shadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.1);
         cursor: pointer;
+        color: @TextColor;
 
         span {
           font-size: 14px;
@@ -107,7 +111,7 @@ body {
             height: fit-content;
             padding: 8px;
             margin-bottom: 8px;
-            background-color: @White;
+            background-color: @BackgroundElements;
             border-radius: 8px;
             box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.1);
             cursor: pointer;
