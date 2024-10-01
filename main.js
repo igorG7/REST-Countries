@@ -1,5 +1,13 @@
+import changeTheme from "./darkmode.js";
+import { loadTheme } from "./darkmode.js";
+
 const countriesList = document.querySelector("#countries-list");
 let data;
+
+const themeButton = document.querySelector("#theme-button");
+themeButton.addEventListener("click", changeTheme);
+
+loadTheme();
 
 async function requestData() {
   try {
