@@ -39,7 +39,7 @@ function createCards(data) {
         <h2 class="name-country">${card.name}</h2>
         <p><strong>Population:</strong> ${card.population.toLocaleString()}</p>
         <p><strong>Region:</strong> ${card.region}</p>
-        <p><strong>Capital:</strong> ${card.capital}</p>
+        <p><strong>Capital:</strong> ${card.capital ?? "- -"}</p>
       </div>
     </div>
     `;
