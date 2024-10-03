@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 // Colors
@@ -111,11 +112,11 @@ html {
             margin-top: 32px;
             padding: 16px;
             background-color: @BackgroundElements;
-
             border: none;
             border-radius: 8px;
             box-shadow: 0px 0px 33px 7px rgba(0, 0, 0, 0.1);
             cursor: pointer;
+            outline: none;
 
             p {
               font-size: 14px;
@@ -128,8 +129,10 @@ html {
             position: absolute;
 
             ul {
+              height: 0;
               margin-top: 4px;
-              padding: 16px;
+              padding: 0;
+              transition: height 0.5s, padding 0.5s;
               list-style: none;
               background-color: @BackgroundElements;
               border-radius: 8px;
@@ -141,6 +144,21 @@ html {
                 font-size: 14px;
                 font-weight: 600;
                 cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.2s, visibility 0.2s;
+              }
+
+              &.active {
+                height: 150px;
+                padding: 16px;
+                transition: height 0.5s, padding 0.5s;
+
+                li {
+                  opacity: 100%;
+                  visibility: visible;
+                  transition: opacity 1.5s, visibility 1.5s;
+                }
               }
             }
           }

@@ -120,3 +120,15 @@ function filterByRegion(event) {
 
   createCards(filtredRegion);
 }
+
+const select = document.querySelector("#select");
+
+select.addEventListener("click", () => {
+  const listOptions = document.querySelector("#list-options");
+
+  if (listOptions.classList.contains("active")) {
+    listOptions.classList.remove("active");
+  } else {
+    listOptions.classList.add("active");
+  }
+});
