@@ -8,7 +8,23 @@ O objetivo desse projeto foi construir uma aplicação que exibe uma lista de pa
 
 **Desktop**
 
+![pag-inicial-claro](https://github.com/user-attachments/assets/53291c2b-66dc-48d4-a232-fa00fd391929)
+
+![pag-inicial-escuro](https://github.com/user-attachments/assets/395b1f83-518e-4efe-9dc1-811204796d60)
+
+![pag-detalhed-claro](https://github.com/user-attachments/assets/3e5156c4-e38f-4728-857e-bb308a1a2596)
+
+![pag-detalhes-escuro](https://github.com/user-attachments/assets/ae64aba6-fcaa-4dbd-8b32-fdaac3598dfe)
+
 **Mobile**
+
+![pag-inicial-mobile-claro](https://github.com/user-attachments/assets/8174d2b7-364c-4e27-a62d-442ed8d303e7)
+
+![pag-inicial-mobile-escuro](https://github.com/user-attachments/assets/63f23d1d-90ab-43f9-a74f-b0af1bcccdd4)
+
+![pag-detalhes-mobile-claro](https://github.com/user-attachments/assets/729aed9a-c155-49b9-b938-9c72d5fd8454)
+
+![pag-detalhes-mobile-escuro](https://github.com/user-attachments/assets/b72f2e2d-248d-46f7-9d2b-b76285ce21f9)
 
 ### Links de acesso
 
@@ -46,10 +62,12 @@ Duas funções de evento estão contidas dentro da `createCards`, são elas: `re
 Ainda na página inicial, temos as funções que realizam busca por pesquisa e filtro por regiões. Com um input de pesquisa disponível, um filtro baseado na entrada de dados por parte do usuário é realizado dentro da variável `data`. Essa pesquisa corresponde aos nomes dos países existentes, sendo aqueles que atenderem parcial ou completamente a pesquisa feita, e então serão retornados na tela. A função responsável por captar e retornar os Cards equivalentes à pesquisa é denominada como `eventInputSearch`. Após realizar o filtro corretamente, a função `createCards` é chamada recebendo essa nova coleção de países, e em seguida os recria para a visualização do usuário.
 
 ![inputSearch](https://github.com/user-attachments/assets/2afe17da-5a14-499f-80c1-2fb0114baa5c)
+(Função `eventInputSearch`)
 
 Já o filtro por regiões acontece por opções pré-definidas onde o usuário poderá escolher entre elas. Essas opções alternam entre os cinco continentes do globo. Ao clicar em alguma dessas alternativas de filtragem, a função `filterByRegion` irá realizar uma busca dentro da variável `data` e selecionar apenas os países que correspondem a região selecionada. Ao final da execução a função `createCards` também é chamada para recriar e exibir a nova coleção de países com base no filtro realizado.
 
 ![filterByRegion](https://github.com/user-attachments/assets/56988b70-0228-4658-82e3-c15538d1d479)
+(Função `filterByRegion`)
 
 Partindo para a página de detalhes, uma variável denominada `recoveredCountry` recebe do `sessionStorage` o objeto com as informações referentes ao país clicado na tela inicial. Com as informações recebidas, elas são retornadas em seus campos específicos, trazendo novas informações sobre o país em questão.
 
@@ -83,3 +101,21 @@ Para realizar a busca do país clicado, uma função chamada `resquestNameCountr
 
 ![requestNameCountryClicked](https://github.com/user-attachments/assets/7ace4757-f0bc-45fa-b0de-f1bc70bc86f1)
 (Função `resquestNameCountryClicked`)
+
+## O que foi aprendido
+
+### Opptional Chaining
+
+O operador de encadeamento opcional (Opptional Chaining) `?.`, permite a leitura de uma propriedade localizada internamente em uma cadeia de objetos conectados, sem que uma validação de cada referência seja expressivamente realizada. O operador `?.` funciona de forma similar ao operador `.` de encadeamento, porém, ao invés de causar um erro se a referência for `nullish`, a expressão sofre um "curto-circuito" e retorna com um valor de `undefined`. Isso resulta em expressões mais curtas e simples ao acessar propriedades encadeadas quando existe a possibilidade de uma referência não existir.
+
+### Nullish Coalescing
+
+Nullish Coalescing são operadores utilizados para garantir um valor padrão a uma função, variável ou constante, caso uma expressão seja `null` ou `undefined`. O operador `??` funciona de forma semelhante ao operador lógico OR `||`, mas a principal diferença é que: o `||` retorna o segundo operando apenas se o primeiro for `falsy`, e o `??` retorna o segundo operando apenas se o primeiro for `null` ou `undefined`. Nullish Coalescing e o conceito de Opptional Chaining trabalham muito bem juntos, podendo atribuir valores padrões em cadeias de objetos caso alguma referência seja inexistente. 
+
+### Promises 
+
+Muito efecientes em tratar métodos assíncronos, as Promises (ou Promessas) são objetos que representam uma eventual conlusão ou falha de uma função assíncrona. São usadas para lidar com operações que não são imediatamente resolvidas no código, como por exemplo, requisições a base dados através de APIs. Então com sua utilização, métodos que são resolvidos posteriomente no código ainda podem ser utilizados, pois, as Promises garantem que esse valores irão chegar futuramente, caso não haja nenhuma falha.
+
+## Créditos
+
+Esse projeto foi um desafio realizado pela plataforma Frontend Mentor.
